@@ -17,7 +17,11 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   const storyText = req.body.story;
   const image = req.file;
 
-  // Get user details
+  if (!storyText) {
+    console.log('⚠️ Missing story');
+    return res.status(400).json({ message: 'Missing story text' });
+  }
+
   const metadata = {
     ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
     userAgent: req.headers['user-agent'] || 'unknown',
@@ -25,24 +29,27 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
     timestamp: new Date().toISOString(),
   };
 
-  if (!storyText || !image) {
-    console.log('⚠️ Missing story or image');
-    return res.status(400).json({ message: 'Missing story or image' });
-  }
+  let imageUrl = null;
+  let fileInfo = null;
 
-  const newFileName = `${Date.now()}-${image.originalname}`;
-  const newFilePath = path.join('uploads', newFileName);
-  fs.renameSync(image.path, newFilePath);
+  if (image) {
+    const newFileName = `${Date.now()}-${image.originalname}`;
+    const newFilePath = path.join('uploads', newFileName);
+    fs.renameSync(image.path, newFilePath);
 
-  const record = {
-    story: storyText,
-    imageUrl: `/uploads/${newFileName}`,
-    fileInfo: {
+    imageUrl = `/uploads/${newFileName}`;
+    fileInfo = {
       originalName: image.originalname,
       mimeType: image.mimetype,
       size: image.size,
-    },
-    metadata
+    };
+  }
+
+  const record = {
+    story: storyText,
+    imageUrl,
+    fileInfo,
+    metadata,
   };
 
   const jsonFileName = `${Date.now()}.json`;

@@ -1,0 +1,15 @@
+{
+  "story": "asdf",
+  "imageUrl": "/uploads/1750281551487-NikonZII-89 (1).jpg",
+  "fileInfo": {
+    "originalName": "NikonZII-89 (1).jpg",
+    "mimeType": "image/jpeg",
+    "size": 11959027
+  },
+  "metadata": {
+    "ip": "::ffff:192.168.4.69",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+    "referer": "http://ec2-pi.local:5173/",
+    "timestamp": "2025-06-18T21:19:11.487Z"
+  }
+}
