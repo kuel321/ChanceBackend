@@ -1,0 +1,15 @@
+{
+  "story": "Hello!",
+  "imageUrl": "/uploads/1750279854912-1000012603.jpg",
+  "fileInfo": {
+    "originalName": "1000012603.jpg",
+    "mimeType": "image/jpeg",
+    "size": 36656
+  },
+  "metadata": {
+    "ip": "::ffff:192.168.4.105",
+    "userAgent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36",
+    "referer": "http://192.168.4.69:5173/",
+    "timestamp": "2025-06-18T20:50:54.912Z"
+  }
+}

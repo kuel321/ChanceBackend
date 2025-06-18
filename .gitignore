@@ -1,0 +1,50 @@
+# ── Node / Express essentials ────────────────────────────────────────────
+node_modules/             # installed packages
+npm-debug.log*            # npm crash logs
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── Environment & secrets ────────────────────────────────────────────────
+.env                      # dotenv-style env vars
+.env.*.local
+.env.local
+
+# ── Runtime output ───────────────────────────────────────────────────────
+logs/                     # custom app log dir
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ── Testing & coverage ───────────────────────────────────────────────────
+coverage/
+.nyc_output/
+jest-html-reporters-*/    # jest reporters
+*.lcov
+
+# ── Build artifacts ──────────────────────────────────────────────────────
+dist/
+build/
+public/build/             # Vite / Rollup outputs
+.next/                    # Next.js hybrid apps
+out/
+tmp/
+temp/
+
+# ── Editor / OS clutter ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Docker & PM2 ─────────────────────────────────────────────────────────
+docker-compose.override.yml
+*.local.yml
+pm2*.log
+
+# ── Optional: uploads or other large, runtime-only dirs ──────────────────
+#uploads/
